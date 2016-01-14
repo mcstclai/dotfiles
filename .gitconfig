@@ -1,0 +1,7 @@
+[user]
+	name = Matt StClair
+	email = matt.stclair@plexus.com
+[core]
+	editor = vim
+[push]
+	default = matching
