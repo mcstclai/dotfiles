@@ -13,5 +13,7 @@ do
 	ln -s $dotdir/$file ~/$file
 done
 
+rm -rf ~/.git
+
 source ~/.bashrc
 

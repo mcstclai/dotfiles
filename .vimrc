@@ -109,3 +109,5 @@ let g:solarized_termtrans = 1
 colorscheme solarized
 call togglebg#map("<F5>")
 
+map <F7> mzgg=G`z
+
