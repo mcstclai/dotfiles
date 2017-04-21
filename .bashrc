@@ -106,6 +106,7 @@ alias whence='type -a'                        # where, of a sort
 alias grep='grep --color'                     # show differences in colour
 alias egrep='egrep --color=auto'              # show differences in colour
 alias fgrep='fgrep --color=auto'              # show differences in colour
+alias wget='wget --content-disposition'
 #
 # Some shortcuts for different directory listings
 alias ls='ls -h --color=auto'                 # classify files in colour
@@ -114,7 +115,7 @@ alias vdir='ls --color=auto --format=long'
 alias ll='ls -l'                              # long list
 alias la='ls -A'                              # all but . and ..
 alias l='ls -C'                               #
-alias vi='vim'
+alias vi='~/vim/src/vim'
 alias k='ssh karma -Y'
 alias b='ssh boulder'
 alias n='ssh neenah'
@@ -264,3 +265,8 @@ GIT_PS1_SHOWCOLORHINTS=1
 # PS1='[\u@\h \W$(__git_ps1 " (%s)")]\$ '
 
 eval `dircolors ~/.dircolors`
+
+export EDITOR=vim
+
+#disable XON/XOFF so I can i-search
+stty -ixon

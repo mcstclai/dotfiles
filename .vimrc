@@ -55,6 +55,8 @@ endif
 if &t_Co > 2 || has("gui_running")
   syntax on
   set hlsearch
+  " Press Space to turn off highlighting and clear any message already displayed.
+  nnoremap <silent> <Space> :nohlsearch<Bar>:echo<CR>
 endif
 
 " Only do this part when compiled with support for autocommands.
@@ -111,3 +113,20 @@ call togglebg#map("<F5>")
 
 map <F7> mzgg=G`z
 
+set tags=./tags,tags;
+
+set equalprg=/usr/bin/astyle\ -n\ -z2\ --style=1tbs
+
+set expandtab
+set shiftwidth=4
+set softtabstop=4
+
+set pastetoggle=<F2>
+nnoremap <silent> <F8> :TlistToggle<CR>
+let g:CUseTool_cmake = 'yes'
+let g:CUseTool_doxygen = 'yes'
+call mmtemplates#config#Add ( 'C', '~/.vim/c-support/templates/doxygen.template', 'Doxygen', 'ntd' )
+nnoremap <silent> <F6> :NERDTreeToggle<CR>
+nnoremap <silent> <F11> :YcmCompleter FixIt<CR>
+map <F2> :mksession! ~/.vim_session <cr>
+map <F3> :source ~/.vim_session <cr>
