@@ -1,0 +1,44 @@
+#-----------------------------------------------------------
+# Vivado v2016.4 (64-bit)
+# SW Build 1756540 on Mon Jan 23 19:11:19 MST 2017
+# IP Build 1755317 on Mon Jan 23 20:30:07 MST 2017
+# Start of session at: Thu Apr  6 11:52:18 2017
+# Process ID: 61293
+# Current directory: /home/matt.stclair/.dotfiles/.vim/doc
+# Command line: vivado
+# Log file: /home/matt.stclair/.dotfiles/.vim/doc/vivado.log
+# Journal file: /home/matt.stclair/.dotfiles/.vim/doc/vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project /home/matt.stclair/d709/fpga/ChassisManager/chassis_manager/chassis_manager.xpr
+Scanning sources...
+Finished scanning sources
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/opt/Xilinx/Vivado/2016.4/data/ip'.
+open_project: Time (s): cpu = 00:00:14 ; elapsed = 00:00:07 . Memory (MB): peak = 6105.910 ; gain = 178.809 ; free physical = 5630 ; free virtual = 67223
+open_bd_design {/home/matt.stclair/d709/fpga/ChassisManager/chassis_manager/chassis_manager.srcs/sources_1/bd/axi/axi.bd}
+Adding cell -- xilinx.com:ip:axi_gpio:2.0 - alert_gpio
+Adding cell -- xilinx.com:ip:axi_apb_bridge:3.0 - apb_bridge
+Adding cell -- xilinx.com:ip:clk_wiz:5.3 - axi_clk_wiz
+Adding cell -- xilinx.com:ip:axi_protocol_converter:2.1 - axi_protocol_converter_0
+Adding cell -- xilinx.com:ip:axi_protocol_converter:2.1 - axi_protocol_converter_1
+Adding cell -- xilinx.com:ip:axi_iic:2.0 - fan_bus
+Adding cell -- xilinx.com:ip:axi_gpio:2.0 - front_panel_gpio
+Adding cell -- xilinx.com:ip:xlconcat:2.1 - int_contcate
+Adding cell -- xilinx.com:ip:processing_system7:5.5 - processing_system7_0
+Adding cell -- xilinx.com:ip:axi_iic:2.0 - psu_bus
+Adding cell -- xilinx.com:ip:proc_sys_reset:5.0 - rst_clk_wiz_100M
+Adding cell -- xilinx.com:ip:clk_wiz:5.3 - serial_clk_wiz
+Adding cell -- xilinx.com:ip:axi_crossbar:2.1 - serial_slave_axi_0
+Adding cell -- xilinx.com:ip:axi_crossbar:2.1 - serial_slave_axi_1
+Adding cell -- xilinx.com:ip:xadc_wiz:3.3 - xadc
+WARNING: [BD 41-1731] Type mismatch between connected pins: /axi_clk_wiz/locked(undef) and /serial_clk_wiz/resetn(rst)
+Adding cell -- xilinx.com:ip:axi_crossbar:2.1 - xbar
+Adding cell -- xilinx.com:ip:axi_data_fifo:2.1 - s00_data_fifo
+Adding cell -- xilinx.com:ip:axi_protocol_converter:2.1 - auto_pc
+Adding cell -- xilinx.com:ip:axi_crossbar:2.1 - xbar
+Adding cell -- xilinx.com:ip:axi_protocol_converter:2.1 - auto_pc
+Successfully read diagram <axi> from BD file </home/matt.stclair/d709/fpga/ChassisManager/chassis_manager/chassis_manager.srcs/sources_1/bd/axi/axi.bd>
+exit
+INFO: [Common 17-206] Exiting Vivado at Thu Apr  6 11:57:16 2017...

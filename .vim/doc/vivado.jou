@@ -1,0 +1,14 @@
+#-----------------------------------------------------------
+# Vivado v2016.4 (64-bit)
+# SW Build 1756540 on Mon Jan 23 19:11:19 MST 2017
+# IP Build 1755317 on Mon Jan 23 20:30:07 MST 2017
+# Start of session at: Thu Apr  6 11:52:18 2017
+# Process ID: 61293
+# Current directory: /home/matt.stclair/.dotfiles/.vim/doc
+# Command line: vivado
+# Log file: /home/matt.stclair/.dotfiles/.vim/doc/vivado.log
+# Journal file: /home/matt.stclair/.dotfiles/.vim/doc/vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project /home/matt.stclair/d709/fpga/ChassisManager/chassis_manager/chassis_manager.xpr
+open_bd_design {/home/matt.stclair/d709/fpga/ChassisManager/chassis_manager/chassis_manager.srcs/sources_1/bd/axi/axi.bd}
