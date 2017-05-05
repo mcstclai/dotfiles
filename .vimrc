@@ -109,7 +109,7 @@ else
 endif
 let g:solarized_termtrans = 1
 colorscheme solarized
-call togglebg#map("<F5>")
+" call togglebg#map("<F5>")
 
 map <F7> mzgg=G`z
 
@@ -130,3 +130,8 @@ nnoremap <silent> <F6> :NERDTreeToggle<CR>
 nnoremap <silent> <F11> :YcmCompleter FixIt<CR>
 map <F2> :mksession! ~/.vim_session <cr>
 map <F3> :source ~/.vim_session <cr>
+set nowrap
+nnoremap <F5> :YcmForceCompileAndDiagnostics<CR>
+
+"set foldmethod=syntax
+
