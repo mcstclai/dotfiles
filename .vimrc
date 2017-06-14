@@ -1,42 +1,52 @@
-" An example for a vimrc file.
+set nocompatible              " be iMproved, required
+filetype off                  " required
+
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+" alternatively, pass a path where Vundle should install plugins
+"call vundle#begin('~/some/path/here')
+
+" let Vundle manage Vundle, required
+Plugin 'VundleVim/Vundle.vim'
+Plugin 'tpope/vim-fugitive'
+Plugin 'altercation/vim-colors-solarized'
+Plugin 'scrooloose/nerdtree'
+Plugin 'valloric/youcompleteme'
+
+" All of your Plugins must be added before the following line
+call vundle#end()            " required
+filetype plugin indent on    " required
+" To ignore plugin indent changes, instead use:
+"filetype plugin on
 "
-" Maintainer:	Bram Moolenaar <Bram@vim.org>
-" Last change:	2014 Feb 05
+" Brief help
+" :PluginList       - lists configured plugins
+" :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
+" :PluginSearch foo - searches for foo; append `!` to refresh local cache
+" :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
 "
-" To use it, copy it to
-"     for Unix and OS/2:  ~/.vimrc
-"	      for Amiga:  s:.vimrc
-"  for MS-DOS and Win32:  $VIM\_vimrc
-"	    for OpenVMS:  sys$login:.vimrc
+" see :h vundle for more details or wiki for FAQ
+" Put your non-Plugin stuff after this line
+
 
 " When started as "evim", evim.vim will already have done these settings.
 if v:progname =~? "evim"
   finish
 endif
 
-" Use Vim settings, rather than Vi settings (much better!).
-" This must be first, because it changes other options as a side effect.
-set nocompatible
+if has("vms")
+  set nobackup		" do not keep a backup file, use versions instead
+else
+  set backup		" keep a backup file (restore to previous version)
+  if has('persistent_undo')
+    set undofile	" keep an undo file (undo changes after closing)
+  endif
+endif
 
-execute pathogen#infect()
-
-" allow backspacing over everything in insert mode
-set backspace=indent,eol,start
-
-set nobackup
-" if has("vms")
-"   set nobackup		" do not keep a backup file, use versions instead
-" else
-"   set backup		" keep a backup file (restore to previous version)
-"   set undofile		" keep an undo file (undo changes after closing)
-" endif
-" set history=50		" keep 50 lines of command line history
 set ruler		" show the cursor position all the time
 set showcmd		" display incomplete commands
 set incsearch		" do incremental searching
-
-" For Win32 GUI: remove 't' flag from 'guioptions': no tearoff menu entries
-" let &guioptions = substitute(&guioptions, "t", "", "g")
 
 " Don't use Ex mode, use Q for formatting
 map Q gq
@@ -50,24 +60,13 @@ if has('mouse')
   set mouse=a
 endif
 
-" Switch syntax highlighting on, when the terminal has colors
-" Also switch on highlighting the last used search pattern.
 if &t_Co > 2 || has("gui_running")
-  syntax on
+  " Switch on highlighting the last used search pattern.
   set hlsearch
-  " Press Space to turn off highlighting and clear any message already displayed.
-  nnoremap <silent> <Space> :nohlsearch<Bar>:echo<CR>
 endif
 
 " Only do this part when compiled with support for autocommands.
 if has("autocmd")
-
-  " Enable file type detection.
-  " Use the default filetype settings, so that mail gets 'tw' set to 72,
-  " 'cindent' is on in C files, etc.
-  " Also load indent files, to automatically do language-dependent indenting.
-  filetype plugin indent on
-
   " Put these in an autocmd group, so that we can delete them easily.
   augroup vimrcEx
   au!
@@ -80,14 +79,11 @@ if has("autocmd")
   autocmd BufReadPost *
     \ if line("'\"") > 1 && line("'\"") <= line("$") |
     \   exe "normal! g`\"" |
-    \ endif
+  " For all text files set 'textwidth' to 78 characters.
 
   augroup END
-
 else
-
   set autoindent		" always set autoindenting on
-
 endif " has("autocmd")
 
 " Convenient command to see the difference between the current buffer and the
@@ -98,6 +94,15 @@ if !exists(":DiffOrig")
 		  \ | wincmd p | diffthis
 endif
 
+" Add optional packages.
+"
+" The matchit plugin makes the % command work better, but it is not backwards
+" compatible.
+if has('syntax') && has('eval')
+  packadd matchit
+endif
+
+" Solarized
 syntax enable
 if has('gui_running')
 	set background=light
@@ -106,29 +111,24 @@ else
 endif
 let g:solarized_termtrans = 1
 colorscheme solarized
-" call togglebg#map("<F5>")
 
-map <F7> mzgg=G`z
-
+" Tag Support
 set tags=./tags,tags;
 
-set equalprg=/usr/bin/astyle\ -n\ -z2\ --style=1tbs
+" Function Key Mappings
+map <F2> :mksession! ~/.vim_session <cr>
+map <F3> :source ~/.vim_session <cr>
+set pastetoggle=<F4>
+nnoremap <F5> :YcmForceCompileAndDiagnostics<CR>
+nnoremap <silent> <F6> :NERDTreeToggle<CR>
+map <F7> mzgg=G`z
+nnoremap <silent> <F11> :YcmCompleter FixIt<CR>
 
+" Press Space to turn off highlighting and clear any message already displayed.
+nnoremap <silent> <Space> :nohlsearch<Bar>:echo<CR>
+
+" Style Options
 set expandtab
 set shiftwidth=4
 set softtabstop=4
-
-set pastetoggle=<F2>
-nnoremap <silent> <F8> :TlistToggle<CR>
-let g:CUseTool_cmake = 'yes'
-let g:CUseTool_doxygen = 'yes'
-call mmtemplates#config#Add ( 'C', '~/.vim/c-support/templates/doxygen.template', 'Doxygen', 'ntd' )
-nnoremap <silent> <F6> :NERDTreeToggle<CR>
-nnoremap <silent> <F11> :YcmCompleter FixIt<CR>
-map <F2> :mksession! ~/.vim_session <cr>
-map <F3> :source ~/.vim_session <cr>
-set nowrap
-nnoremap <F5> :YcmForceCompileAndDiagnostics<CR>
-
-"set foldmethod=syntax
-
+set equalprg=/usr/bin/astyle\ -n\ -z2\ --style=1tbs
