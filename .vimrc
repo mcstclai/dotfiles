@@ -13,6 +13,10 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'scrooloose/nerdtree'
 Plugin 'valloric/youcompleteme'
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
+Plugin 'ctrlpvim/ctrlp.vim'
+Plugin 'majutsushi/tagbar'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -102,6 +106,11 @@ if has('syntax') && has('eval')
   packadd matchit
 endif
 
+" Airline
+" set t_Co=256
+let g:airline_solarized_bg = 'dark'
+set laststatus=2
+
 " Solarized
 syntax enable
 if has('gui_running')
@@ -122,6 +131,7 @@ set pastetoggle=<F4>
 nnoremap <F5> :YcmForceCompileAndDiagnostics<CR>
 nnoremap <silent> <F6> :NERDTreeToggle<CR>
 map <F7> mzgg=G`z
+nmap <F8> :TagbarToggle<CR>
 nnoremap <silent> <F11> :YcmCompleter FixIt<CR>
 
 " Press Space to turn off highlighting and clear any message already displayed.
