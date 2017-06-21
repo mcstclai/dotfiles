@@ -154,6 +154,8 @@ nnoremap <silent> <F6> :NERDTreeToggle<CR>
 map <F7> mzgg=G`z
 nmap <F8> :TagbarToggle<CR>
 nnoremap <silent> <F11> :YcmCompleter FixIt<CR>
+" Camel Case to underscores
+nnoremap <silent> <F12> :%s#\C\(\<\u[a-z0-9]\+\\|[a-z0-9]\+\)\(\u\)#\l\1_\l\2#g<CR>
 
 " Press Space to turn off highlighting and clear any message already displayed.
 nnoremap <silent> <Space> :nohlsearch<Bar>:echo<CR>
