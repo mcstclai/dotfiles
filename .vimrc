@@ -14,6 +14,7 @@ Plugin 'altercation/vim-colors-solarized'
 Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'valloric/youcompleteme'
+" Plugin 'edkolev/tmuxline.vim'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'ctrlpvim/ctrlp.vim'
@@ -117,6 +118,8 @@ endif
 " set t_Co=256
 let g:airline_solarized_bg = 'dark'
 set laststatus=2
+let g:airline_powerline_fonts = 1
+let g:airline#extensions#tabline#enabled = 1
 
 " Solarized
 syntax enable
@@ -153,8 +156,10 @@ nnoremap <F5> :YcmForceCompileAndDiagnostics<CR>
 nnoremap <silent> <F6> :NERDTreeToggle<CR>
 map <F7> mzgg=G`z
 nmap <F8> :TagbarToggle<CR>
-nnoremap <silent> <F11> :YcmCompleter FixIt<CR>
+nnoremap <silent> <F10> :YcmCompleter FixIt<CR>
 " Camel Case to underscores
+nnoremap <silent> <F11> :s#\C\(\<\u[a-z0-9]\+\\|[a-z0-9]\+\)\(\u\)#\l\1_\l\2#g<CR>
+vnoremap <F11> :s#\%V\C\(\<\u[a-z0-9]\+\\|[a-z0-9]\+\)\(\u\)#\l\1_\l\2#g<CR>
 nnoremap <silent> <F12> :%s#\C\(\<\u[a-z0-9]\+\\|[a-z0-9]\+\)\(\u\)#\l\1_\l\2#g<CR>
 
 " Press Space to turn off highlighting and clear any message already displayed.
@@ -311,3 +316,4 @@ if has("cscope")
 
 endif
 
+source ~/.regexlist.vim
