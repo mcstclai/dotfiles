@@ -167,10 +167,10 @@ nnoremap <silent> <F12> :%s#\C\(\<\u[a-z0-9]\+\\|[a-z0-9]\+\)\(\u\)#\l\1_\l\2#g<
 nnoremap <silent> <Space> :nohlsearch<Bar>:echo<CR>
 
 " Style Options
-set expandtab
-set shiftwidth=4
-set softtabstop=4
-set equalprg=/usr/bin/astyle\ -n\ -z2\ --style=1tbs
+" set expandtab
+" set shiftwidth=4
+" set softtabstop=4
+" set equalprg=/usr/bin/astyle\ -n\ -z2\ --style=1tbs
 
 " Ultisnips
 let g:UltiSnipsExpandTrigger="<c-j>"
@@ -318,4 +318,6 @@ if has("cscope")
 endif
 
 source ~/.regexlist.vim
+set exrc
+set secure
 set makeprg=./build.sh
