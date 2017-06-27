@@ -114,6 +114,9 @@ if has('syntax') && has('eval')
   packadd matchit
 endif
 
+" YouCompleteMe
+let g:ycm_always_populate_location_list = 1
+
 " Airline
 " set t_Co=256
 let g:airline_solarized_bg = 'dark'
