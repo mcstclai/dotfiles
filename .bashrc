@@ -127,6 +127,9 @@ alias nk='ssh 172.21.249.234'
 alias nola='ssh nola'
 alias mg4='ssh mgmt4'
 
+alias ctags='ctags -R --langmap=c:.c.h --fields=+l -LCTAGS'
+alias cscope='cscope -Rbq'
+
 # Umask
 #
 # /etc/profile sets 022, removing write perms to group + others.
