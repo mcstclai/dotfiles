@@ -19,7 +19,7 @@ Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'majutsushi/tagbar'
-Plugin 'a.vim'
+Plugin 'csliu/a.vim'
 Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
 
