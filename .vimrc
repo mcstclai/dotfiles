@@ -321,7 +321,13 @@ if has("cscope")
 
 endif
 
+" Vim man page support
+runtime ftplugin/man.vim
+
+" pull in saved regexes
 source ~/.regexlist.vim
+
+"allow per=project .vimrc
 set exrc
 set secure
-set makeprg=./build.sh
+
