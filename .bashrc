@@ -115,17 +115,20 @@ alias vdir='ls --color=auto --format=long'
 alias ll='ls -l'                              # long list
 alias la='ls -A'                              # all but . and ..
 alias l='ls -C'                               #
-alias vi='~/vim/src/vim'
-alias tmux='~/tmux-2.3/tmux'
-alias k='ssh karma -Y'
-alias b='ssh boulder'
-alias n='ssh neenah'
-alias h='ssh hypatia'
-alias dv='ssh dvlin'
-alias ss='ssh superserver'
-alias nk='ssh 172.21.249.234'
-alias nola='ssh nola'
-alias mg4='ssh mgmt4'
+#alias k='ssh karma -Y'
+#alias b='ssh boulder'
+#alias n='ssh neenah'
+#alias h='ssh hypatia'
+#alias dv='ssh dvlin'
+#alias ss='ssh superserver'
+#alias nk='ssh 172.21.249.234'
+#alias nola='ssh nola'
+#alias mg4='ssh mgmt4'
+alias yoda='ssh yoda -Y'
+alias lando='ssh lando -Y'
+alias hokie='ssh hokie -Y'
+alias zed1='ssh zed1 -Y'
+alias zed2='ssh zed2'
 
 # Umask
 #
@@ -271,3 +274,8 @@ export EDITOR=vim
 
 #disable XON/XOFF so I can i-search
 stty -ixon
+
+# source the local bashrc if it exists
+if [ -f "${HOME}/.bashrc_local" ] ; then
+  source "${HOME}/.bashrc_local"
+fi
