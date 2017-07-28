@@ -14,13 +14,15 @@ Plugin 'altercation/vim-colors-solarized'
 Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'valloric/youcompleteme'
+" Plugin 'edkolev/tmuxline.vim'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'majutsushi/tagbar'
-Plugin 'a.vim'
+Plugin 'csliu/a.vim'
 Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
+Plugin 'mileszs/ack.vim'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -36,7 +38,6 @@ filetype plugin indent on    " required
 "
 " see :h vundle for more details or wiki for FAQ
 " Put your non-Plugin stuff after this line
-
 
 " When started as "evim", evim.vim will already have done these settings.
 if v:progname =~? "evim"
@@ -114,10 +115,16 @@ if has('syntax') && has('eval')
   packadd matchit
 endif
 
+" YouCompleteMe
+let g:ycm_always_populate_location_list = 1
+
 " Airline
 " set t_Co=256
 let g:airline_solarized_bg = 'dark'
 set laststatus=2
+let g:airline_powerline_fonts = 1
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#fnamemod = ':t'
 
 " Solarized
 syntax enable
@@ -132,22 +139,14 @@ colorscheme solarized
 " NERDCommenter
 " Add spaces after comment delimiters by default
 let g:NERDSpaceDelims = 1
-
 " Use compact syntax for prettified multi-line comments
 let g:NERDCompactSexyComs = 1
-
 " Align line-wise comment delimiters flush left instead of following code indentation
 let g:NERDDefaultAlign = 'left'
-
 " Set a language to use its alternate delimiters by default
-let g:NERDAltDelims_java = 1
-
-" Add your own custom formats or override the defaults
-let g:NERDCustomDelimiters = { 'c': { 'left': '/**','right': '*/' } }
-
+let g:NERDAltDelims_c = 1
 " Allow commenting and inverting empty lines (useful when commenting a region)
 let g:NERDCommentEmptyLines = 1
-
 " Enable trimming of trailing whitespace when uncommenting
 let g:NERDTrimTrailingWhitespace = 1
 
@@ -162,16 +161,20 @@ nnoremap <F5> :YcmForceCompileAndDiagnostics<CR>
 nnoremap <silent> <F6> :NERDTreeToggle<CR>
 map <F7> mzgg=G`z
 nmap <F8> :TagbarToggle<CR>
-nnoremap <silent> <F11> :YcmCompleter FixIt<CR>
+nnoremap <silent> <F10> :YcmCompleter FixIt<CR>
+" Camel Case to underscores
+nnoremap <silent> <F11> :s#\C\(\<\u[a-z0-9]\+\\|[a-z0-9]\+\)\(\u\)#\l\1_\l\2#g<CR>
+vnoremap <F11> :s#\%V\C\(\<\u[a-z0-9]\+\\|[a-z0-9]\+\)\(\u\)#\l\1_\l\2#g<CR>
+nnoremap <silent> <F12> :%s#\C\(\<\u[a-z0-9]\+\\|[a-z0-9]\+\)\(\u\)#\l\1_\l\2#g<CR>
 
 " Press Space to turn off highlighting and clear any message already displayed.
 nnoremap <silent> <Space> :nohlsearch<Bar>:echo<CR>
 
 " Style Options
-set expandtab
-set shiftwidth=4
-set softtabstop=4
-set equalprg=/usr/bin/astyle\ -n\ -z2\ --style=1tbs
+" set expandtab
+" set shiftwidth=4
+" set softtabstop=4
+" set equalprg=/usr/bin/astyle\ -n\ -z2\ --style=1tbs
 
 " Ultisnips
 let g:UltiSnipsExpandTrigger="<c-j>"
@@ -252,6 +255,7 @@ if has("cscope")
     nmap <C-\>f :cs find f <C-R>=expand("<cfile>")<CR><CR>	
     nmap <C-\>i :cs find i ^<C-R>=expand("<cfile>")<CR>$<CR>
     nmap <C-\>d :cs find d <C-R>=expand("<cword>")<CR><CR>	
+    nmap <C-\>a :cs find a <C-R>=expand("<cword>")<CR><CR>	
 
 
     " Using 'CTRL-spacebar' (intepreted as CTRL-@ by vim) then a search type
@@ -270,6 +274,7 @@ if has("cscope")
     nmap <C-@>f :scs find f <C-R>=expand("<cfile>")<CR><CR>	
     nmap <C-@>i :scs find i ^<C-R>=expand("<cfile>")<CR>$<CR>	
     nmap <C-@>d :scs find d <C-R>=expand("<cword>")<CR><CR>	
+    nmap <C-@>a :scs find a <C-R>=expand("<cword>")<CR><CR>	
 
 
     " Hitting CTRL-space *twice* before the search type does a vertical 
@@ -286,6 +291,7 @@ if has("cscope")
     nmap <C-@><C-@>f :vert scs find f <C-R>=expand("<cfile>")<CR><CR>	
     nmap <C-@><C-@>i :vert scs find i ^<C-R>=expand("<cfile>")<CR>$<CR>	
     nmap <C-@><C-@>d :vert scs find d <C-R>=expand("<cword>")<CR><CR>
+    nmap <C-@><C-@>a :vert scs find a <C-R>=expand("<cword>")<CR><CR>
 
 
     """"""""""""" key map timeouts
@@ -317,4 +323,14 @@ if has("cscope")
     "set ttimeoutlen=100
 
 endif
+
+" Vim man page support
+runtime ftplugin/man.vim
+
+" pull in saved regexes
+source ~/.regexlist.vim
+
+"allow per=project .vimrc
+set exrc
+set secure
 

@@ -130,6 +130,9 @@ alias hokie='ssh hokie -Y'
 alias zed1='ssh zed1 -Y'
 alias zed2='ssh zed2'
 
+alias ctags='ctags -R --langmap=c:.c.h --fields=+l -LCTAGS'
+alias cscope='cscope -Rbq'
+
 # Umask
 #
 # /etc/profile sets 022, removing write perms to group + others.
