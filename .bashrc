@@ -115,8 +115,6 @@ alias vdir='ls --color=auto --format=long'
 alias ll='ls -l'                              # long list
 alias la='ls -A'                              # all but . and ..
 alias l='ls -C'                               #
-alias vi='~/vim/src/vim'
-alias tmux='~/tmux-2.3/tmux'
 alias k='ssh karma -Y'
 alias b='ssh boulder'
 alias n='ssh neenah'
