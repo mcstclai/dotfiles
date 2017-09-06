@@ -25,6 +25,7 @@ Plugin 'honza/vim-snippets'
 Plugin 'mileszs/ack.vim'
 " Plugin 'godlygeek/tabular'
 " Plugin 'plasticboy/vim-markdown'
+Plugin 'Conque-GDB'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -154,6 +155,9 @@ let g:NERDTrimTrailingWhitespace = 1
 
 " Tag Support
 set tags=./tags,tags;
+
+" Tagbar
+highlight link TagbarSignature Identifier
 
 " Function Key Mappings
 map <F2> :mksession! ~/.vim_session <cr>
