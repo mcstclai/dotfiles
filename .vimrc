@@ -166,7 +166,7 @@ set pastetoggle=<F4>
 nnoremap <F5> :YcmForceCompileAndDiagnostics<CR>
 nnoremap <silent> <F6> :NERDTreeToggle<CR>
 map <F7> mzgg=G`z
-nmap <F8> :TagbarToggle<CR>
+nmap <F4> :TagbarToggle<CR>
 nnoremap <silent> <F10> :YcmCompleter FixIt<CR>
 " Camel Case to underscores
 nnoremap <silent> <F11> :s#\C\(\<\u[a-z0-9]\+\\|[a-z0-9]\+\)\(\u\)#\l\1_\l\2#g<CR>
