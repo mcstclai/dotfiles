@@ -118,6 +118,15 @@ if has('syntax') && has('eval')
   packadd matchit
 endif
 
+" line numbering
+:set number relativenumber
+
+:augroup numbertoggle
+:  autocmd!
+:  autocmd BufEnter,FocusGained,InsertLeave * set relativenumber
+:  autocmd BufLeave,FocusLost,InsertEnter   * set norelativenumber
+:augroup END
+
 " YouCompleteMe
 let g:ycm_always_populate_location_list = 1
 
