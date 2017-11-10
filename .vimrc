@@ -26,6 +26,7 @@ Plugin 'mileszs/ack.vim'
 " Plugin 'godlygeek/tabular'
 " Plugin 'plasticboy/vim-markdown'
 Plugin 'Conque-GDB'
+Plugin 'moll/vim-bbye'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -184,6 +185,9 @@ nnoremap <silent> <F12> :%s#\C\(\<\u[a-z0-9]\+\\|[a-z0-9]\+\)\(\u\)#\l\1_\l\2#g<
 
 " Press Space to turn off highlighting and clear any message already displayed.
 nnoremap <silent> <Space> :nohlsearch<Bar>:echo<CR>
+
+" Bbye map
+:nnoremap <Leader>q :Bdelete<CR>
 
 " Style Options
 " set expandtab
