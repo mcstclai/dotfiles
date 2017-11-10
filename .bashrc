@@ -109,7 +109,7 @@ alias fgrep='fgrep --color=auto'              # show differences in colour
 alias wget='wget --content-disposition'
 #
 # Some shortcuts for different directory listings
-alias ls='ls -h --color=auto'                 # classify files in colour
+alias ls='ls -h --color=auto --hide="*~"'       # classify files in colour
 alias dir='ls --color=auto --format=vertical'
 alias vdir='ls --color=auto --format=long'
 alias ll='ls -l'                              # long list
@@ -131,7 +131,7 @@ alias zed1='ssh zed1 -Y'
 alias zed2='ssh zed2'
 
 alias ctags='ctags -R --langmap=c:.c.h --fields=+l -LCTAGS'
-alias cscope='cscope -Rbq'
+alias cscope='cscope -Rbq -s../common'
 
 # Umask
 #

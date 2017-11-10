@@ -26,6 +26,7 @@ Plugin 'mileszs/ack.vim'
 " Plugin 'godlygeek/tabular'
 " Plugin 'plasticboy/vim-markdown'
 Plugin 'Conque-GDB'
+Plugin 'chrisbra/csv.vim'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
