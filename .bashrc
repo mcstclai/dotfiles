@@ -115,6 +115,7 @@ alias vdir='ls --color=auto --format=long'
 alias ll='ls -l'                              # long list
 alias la='ls -A'                              # all but . and ..
 alias l='ls -C'                               #
+alias sl='ls'
 #alias k='ssh karma -Y'
 #alias b='ssh boulder'
 #alias n='ssh neenah'
@@ -130,7 +131,7 @@ alias hokie='ssh hokie -Y'
 alias zed1='ssh zed1 -Y'
 alias zed2='ssh zed2'
 
-alias ctags='ctags -R --langmap=c:.c.h --fields=+l -LCTAGS'
+alias ctags='ctags -R --langmap=c:.c.h --fields=+l -LCTAGS --exclude=@CTAGS_EXCLUDE'
 alias cscope='cscope -Rbq -s../common'
 
 # Umask
