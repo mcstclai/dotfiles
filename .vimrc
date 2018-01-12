@@ -28,6 +28,7 @@ Plugin 'mileszs/ack.vim'
 Plugin 'Conque-GDB'
 Plugin 'chrisbra/csv.vim'
 Plugin 'moll/vim-bbye'
+Plugin 'rdnetto/YCM-Generator'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -351,6 +352,8 @@ runtime ftplugin/man.vim
 
 " pull in saved regexes
 source ~/.regexlist.vim
+
+set path+=$PWD/**
 
 "allow per=project .vimrc
 set exrc
