@@ -172,8 +172,8 @@ set tags=./tags,tags;
 highlight link TagbarSignature Identifier
 
 " Function Key Mappings
-map <F2> :mksession! ~/.vim_session <cr>
-map <F3> :source ~/.vim_session <cr>
+map <F2> :mksession! ./Session.vim <cr>
+map <F3> :source ./Session.vim <cr>
 set pastetoggle=<F4>
 nnoremap <F5> :YcmForceCompileAndDiagnostics<CR>
 nnoremap <silent> <F6> :NERDTreeToggle<CR>
