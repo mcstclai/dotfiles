@@ -29,3 +29,4 @@ Term=xterm-256color
 Font=Inconsolata for Powerline Mod
 FontWeight=500
 Scrollbar=none
+AllowSetSelection=true

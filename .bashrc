@@ -129,6 +129,8 @@ alias lando='ssh lando -Y'
 alias hokie='ssh hokie -Y'
 alias zed1='ssh zed1 -Y'
 alias zed2='ssh zed2'
+alias dv='ssh dvdevel1'
+alias sc='ssh scdevel1'
 
 alias ctags='ctags -R --langmap=c:.c.h --fields=+l -LCTAGS'
 alias cscope='cscope -Rbq'
