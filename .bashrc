@@ -99,6 +99,7 @@ alias mv='mv -i'
 # Default to human readable figures
 alias df='df -h'
 alias du='du -h'
+alias dmesg='dmesg -HL'
 #
 # Misc :)
 alias less='less -r'                          # raw control characters
