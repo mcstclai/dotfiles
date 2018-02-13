@@ -257,7 +257,7 @@ export DISPLAY
 
 function set_titlebar {
     case $TERM in
-        *xterm*|ansi|rxvt)
+        *xterm*|ansi|rxvt|*screen*)
             printf "\033]0;%s\007" "$*"
             ;;
     esac
