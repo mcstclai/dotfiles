@@ -99,6 +99,7 @@ alias mv='mv -i'
 # Default to human readable figures
 alias df='df -h'
 alias du='du -h'
+alias dmesg='dmesg -HL'
 #
 # Misc :)
 alias less='less -r'                          # raw control characters
@@ -130,6 +131,8 @@ alias lando='ssh lando -Y'
 alias hokie='ssh hokie -Y'
 alias zed1='ssh zed1 -Y'
 alias zed2='ssh zed2'
+alias dv='ssh dvdevel1'
+alias sc='ssh scdevel1'
 
 alias ctags='ctags -R --langmap=c:.c.h --fields=+l -LCTAGS --exclude=@CTAGS_EXCLUDE'
 alias cscope='cscope -Rbq -s../common'
