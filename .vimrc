@@ -78,6 +78,11 @@ if has('mouse')
 	set mouse=a
 endif
 
+if &term =~ '^screen'
+    " tmux knows the extended mouse mode
+    set ttymouse=xterm2
+endif
+
 if &t_Co > 2 || has("gui_running")
 	" Switch on highlighting the last used search pattern.
 	set hlsearch
