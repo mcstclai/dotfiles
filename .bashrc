@@ -117,6 +117,9 @@ alias ll='ls -l'                              # long list
 alias la='ls -A'                              # all but . and ..
 alias l='ls -C'                               #
 alias sl='ls'
+
+alias f='find -name'
+
 #alias k='ssh karma -Y'
 #alias b='ssh boulder'
 #alias n='ssh neenah'
