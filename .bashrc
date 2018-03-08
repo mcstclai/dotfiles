@@ -110,11 +110,12 @@ alias fgrep='fgrep --color=auto'              # show differences in colour
 alias wget='wget --content-disposition'
 #
 # Some shortcuts for different directory listings
-alias ls='ls -h --color=auto --hide="*~"'       # classify files in colour
+alias laa='/usr/bin/ls -ah --color=auto'
+alias ls='ls -hB --color=auto'                # classify files in colour
 alias dir='ls --color=auto --format=vertical'
 alias vdir='ls --color=auto --format=long'
 alias ll='ls -l'                              # long list
-alias la='ls -A'                              # all but . and ..
+alias la='ls -A'                              # all but . and .. and *~
 alias l='ls -C'                               #
 alias sl='ls'
 
