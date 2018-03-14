@@ -196,6 +196,9 @@ nnoremap <silent> <Space> :nohlsearch<Bar>:echo<CR>
 " Bbye map
 :nnoremap <Leader>q :Bdelete<CR>
 
+" Ctrl-p
+let g:ctrlp_extensions=['tag', 'buffertag']
+
 " Style Options
 " set expandtab
 " set shiftwidth=4
