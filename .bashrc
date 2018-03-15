@@ -139,7 +139,6 @@ alias dv='ssh dvdevel1'
 alias sc='ssh scdevel1'
 
 alias ctags='ctags -R --langmap=c:.c.h --fields=+l -LCTAGS --exclude=@CTAGS_EXCLUDE'
-alias cscope='cscope -Rbq -s../common'
 
 # Umask
 #
