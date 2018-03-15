@@ -138,8 +138,6 @@ alias zed2='ssh zed2'
 alias dv='ssh dvdevel1'
 alias sc='ssh scdevel1'
 
-alias ctags='ctags -R --langmap=c:.c.h --fields=+l -LCTAGS --exclude=@CTAGS_EXCLUDE'
-
 # Umask
 #
 # /etc/profile sets 022, removing write perms to group + others.
