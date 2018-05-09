@@ -29,6 +29,7 @@ Plugin 'Conque-GDB'
 Plugin 'chrisbra/csv.vim'
 Plugin 'moll/vim-bbye'
 Plugin 'rdnetto/YCM-Generator'
+Plugin 'jeaye/color_coded'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -145,6 +146,7 @@ set laststatus=2
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#fnamemod = ':t'
+let g:airline#extensions#whitespace#mixed_indent_algo = 2
 
 " a.vim
 let g:alternateSearchPath = 'sfr:../source,sfr:../src,sfr:../include,sfr:../inc,sfr:../include/b10'
@@ -231,12 +233,12 @@ if has("cscope")
 	set csto=0
 
 	" add any cscope database in current directory
-	if filereadable("cscope.out")
-		cs add cscope.out
-		" else add the database pointed to by environment variable
-	elseif $CSCOPE_DB != ""
-		cs add $CSCOPE_DB
-	endif
+	" if filereadable("cscope.out")
+	"         cs add cscope.out
+	"         " else add the database pointed to by environment variable
+	" elseif $CSCOPE_DB != ""
+	"         cs add $CSCOPE_DB
+	" endif
 
 	" show msg when any other cscope db added
 	set cscopeverbose
