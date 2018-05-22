@@ -2,10 +2,8 @@
 	name = Matt StClair
 	email = matt.stclair@plexus.com
 [core]
-	editor = /home/matt.stclair/vim/src/vim
 [push]
 	default = matching
 [color]
 	ui = auto
 [merge]
-	tool = /home/matt.stclair/vim/src/vim -d

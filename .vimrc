@@ -366,8 +366,6 @@ runtime ftplugin/man.vim
 " pull in saved regexes
 source ~/.regexlist.vim
 
-set path+=$PWD/**
-
 "allow per=project .vimrc
 set exrc
 set secure
