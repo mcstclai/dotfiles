@@ -80,8 +80,8 @@ if has('mouse')
 endif
 
 if &term =~ '^screen'
-    " tmux knows the extended mouse mode
-    set ttymouse=xterm2
+	" tmux knows the extended mouse mode
+	set ttymouse=xterm2
 endif
 
 if &t_Co > 2 || has("gui_running")
@@ -358,6 +358,10 @@ if has("cscope")
 	"
 	"set ttimeoutlen=100
 
+endif
+
+if executable('ag')
+	let g:ackprg = 'ag --vimgrep'
 endif
 
 " Vim man page support
