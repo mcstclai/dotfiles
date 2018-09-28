@@ -181,6 +181,9 @@ set tags=./tags,tags;
 " Tagbar
 highlight link TagbarSignature Identifier
 
+" NERDTree
+let NERDTreeIgnore=['cscope', 'CTAGS', '^tags$', '\.o$', '\.vim$', '\~$']
+
 " Function Key Mappings
 map <F2> :mksession! ./Session.vim <cr>
 map <F3> :source ./Session.vim <cr>
@@ -369,8 +372,6 @@ runtime ftplugin/man.vim
 
 " pull in saved regexes
 source ~/.regexlist.vim
-
-set path+=$PWD/**
 
 "allow per=project .vimrc
 set exrc
