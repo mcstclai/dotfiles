@@ -8,11 +8,14 @@ export ZSH="/home/vagrant/.oh-my-zsh"
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
+export TERM="xterm-256color"
 ZSH_THEME="powerlevel9k/powerlevel9k"
 POWERLEVEL9K_VCS_SHORTEN_LENGTH=17
 POWERLEVEL9K_VCS_SHORTEN_MIN_LENGTH=17
 POWERLEVEL9K_VCS_SHORTEN_STRATEGY="truncate_from_right"
 POWERLEVEL9K_VCS_SHORTEN_DELIMITER=".."
+POWERLEVEL9K_PROMPT_ON_NEWLINE=true
+POWERLEVEL9K_RPROMPT_ON_NEWLINE=true
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -72,7 +75,9 @@ POWERLEVEL9K_VCS_SHORTEN_DELIMITER=".."
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git)
+plugins=(
+	git
+	)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -101,3 +106,4 @@ fi
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+
