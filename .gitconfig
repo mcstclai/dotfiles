@@ -7,3 +7,5 @@
 [color]
 	ui = auto
 [merge]
+[core]
+	excludesfile = ~/.gitignore
