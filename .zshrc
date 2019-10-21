@@ -9,13 +9,7 @@ export ZSH="/home/vagrant/.oh-my-zsh"
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
 export TERM="xterm-256color"
-ZSH_THEME="powerlevel9k/powerlevel9k"
-POWERLEVEL9K_VCS_SHORTEN_LENGTH=17
-POWERLEVEL9K_VCS_SHORTEN_MIN_LENGTH=17
-POWERLEVEL9K_VCS_SHORTEN_STRATEGY="truncate_from_right"
-POWERLEVEL9K_VCS_SHORTEN_DELIMITER=".."
-POWERLEVEL9K_PROMPT_ON_NEWLINE=true
-POWERLEVEL9K_RPROMPT_ON_NEWLINE=true
+ZSH_THEME="powerlevel10k/powerlevel10k"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -77,6 +71,8 @@ POWERLEVEL9K_RPROMPT_ON_NEWLINE=true
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
 	git
+	svn
+	vi-mode
 	)
 
 source $ZSH/oh-my-zsh.sh
@@ -107,3 +103,26 @@ fi
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
+
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ -f ~/.p10k.zsh ]] && source ~/.p10k.zsh
+
+# allow command line editing
+autoload -U edit-command-line
+# Vi style:
+zle -N edit-command-line
+bindkey -M vicmd v edit-command-line
+
+# Start ssh agent if it's not already running
+if [ -f ~/.ssh/agent.env ] ; then
+    . ~/.ssh/agent.env > /dev/null
+    if ! kill -0 $SSH_AGENT_PID > /dev/null 2>&1; then
+        echo "Stale agent file found. Spawning new agent… "
+        eval `ssh-agent | tee ~/.ssh/agent.env`
+        ssh-add
+    fi
+else
+    echo "Starting ssh-agent"
+    eval `ssh-agent | tee ~/.ssh/agent.env`
+    ssh-add
+fi
