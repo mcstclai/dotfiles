@@ -119,7 +119,7 @@ alias la='ls -A'                              # all but . and .. and *~
 alias l='ls -C'                               #
 alias sl='ls'
 
-alias f='find -name'
+alias ff="find . -type f -name "
 
 #alias k='ssh karma -Y'
 #alias b='ssh boulder'

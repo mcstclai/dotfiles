@@ -123,6 +123,7 @@ fi
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+alias ff="find . -type f -name "
 
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
