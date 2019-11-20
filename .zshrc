@@ -92,6 +92,7 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
 	git
+	git-flow
 	svn
 	vi-mode
 	)
@@ -124,6 +125,7 @@ fi
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias ff="find . -type f -name "
+alias v="vim"
 
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
