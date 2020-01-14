@@ -15,5 +15,5 @@ done
 
 rm -rf ~/.git
 
-source ~/.bashrc
+# source ~/.bashrc
 
