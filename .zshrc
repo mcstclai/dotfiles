@@ -1,22 +1,22 @@
 # Start ssh agent if it's not already running
 if [ -f ~/.ssh/agent.env ] ; then
-    . ~/.ssh/agent.env > /dev/null
-    if ! kill -0 $SSH_AGENT_PID > /dev/null 2>&1; then
-        echo "Stale agent file found. Spawning new agent… "
-        eval `ssh-agent | tee ~/.ssh/agent.env`
-        ssh-add
-    fi
+	. ~/.ssh/agent.env > /dev/null
+	if ! kill -0 $SSH_AGENT_PID > /dev/null 2>&1; then
+		echo "Stale agent file found. Spawning new agent… "
+		eval `ssh-agent | tee ~/.ssh/agent.env`
+		ssh-add
+	fi
 else
-    echo "Starting ssh-agent"
-    eval `ssh-agent | tee ~/.ssh/agent.env`
-    ssh-add
+	echo "Starting ssh-agent"
+	eval `ssh-agent | tee ~/.ssh/agent.env`
+	ssh-add
 fi
 
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block, everything else may go below.
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+	source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
 # If you come from bash you might have to change your $PATH.
@@ -91,11 +91,12 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
-	git
-	git-flow
-	svn
-	vi-mode
-	)
+git
+git-flow
+svn
+vi-mode
+zsh-dircolors-solarized
+)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -108,9 +109,9 @@ source $ZSH/oh-my-zsh.sh
 
 # Preferred editor for local and remote sessions
 if [[ -n $SSH_CONNECTION ]]; then
-  export EDITOR='vim'
+	export EDITOR='vim'
 else
-  export EDITOR='vim'
+	export EDITOR='vim'
 fi
 
 # Compilation flags
@@ -126,7 +127,7 @@ fi
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias ff="find . -type f -name "
 alias v="vim"
-
+alias sk="screenkey"
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ -f ~/.p10k.zsh ]] && source ~/.p10k.zsh
@@ -137,3 +138,4 @@ autoload -U edit-command-line
 zle -N edit-command-line
 bindkey -M vicmd v edit-command-line
 
+set -o noclobber

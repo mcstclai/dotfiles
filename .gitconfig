@@ -9,3 +9,7 @@
 [merge]
 [core]
 	excludesfile = ~/.gitignore
+[merge]
+	tool = meld
+[pager]
+	branch = false

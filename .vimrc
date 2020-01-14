@@ -31,6 +31,8 @@ Plugin 'moll/vim-bbye'
 Plugin 'rdnetto/YCM-Generator'
 " Plugin 'jeaye/color_coded'
 Plugin 'tpope/vim-surround'
+Plugin 'vim-pandoc/vim-pandoc'
+Plugin 'vim-pandoc/vim-pandoc-syntax'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -354,6 +356,13 @@ if has("cscope")
 	"set ttimeoutlen=100
 
 endif
+
+"Pandoc settings
+let g:pandoc#folding#level=1
+
+"Pandoc related keymaps
+nnoremap <leader>gq :%!pandoc -f html -t markdown<CR>
+vnoremap <leader>gq : !pandoc -f html -t markdown<CR>
 
 if executable('ag')
 	let g:ackprg = 'ag --vimgrep'
