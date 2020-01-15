@@ -3,7 +3,7 @@
 	email = matt.st.clair@plexus.com
 [core]
 [push]
-	default = matching
+	default = simple
 [color]
 	ui = auto
 [merge]
