@@ -29,7 +29,7 @@ export ZSH="/home/vagrant/.oh-my-zsh"
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-export TERM="xterm-256color"
+# export TERM="xterm-256color"
 ZSH_THEME="powerlevel10k/powerlevel10k"
 
 # Set list of themes to pick from when loading at random
@@ -95,7 +95,6 @@ git
 git-flow
 svn
 vi-mode
-zsh-dircolors-solarized
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -128,6 +127,7 @@ fi
 alias ff="find . -type f -name "
 alias v="vim"
 alias sk="screenkey"
+alias icat="kitty +kitten icat"
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ -f ~/.p10k.zsh ]] && source ~/.p10k.zsh
@@ -139,3 +139,6 @@ zle -N edit-command-line
 bindkey -M vicmd v edit-command-line
 
 set -o noclobber
+
+## set colors for LS_COLORS
+eval `dircolors ~/.dircolors`

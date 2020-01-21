@@ -198,6 +198,10 @@ nnoremap <silent> <Space> :nohlsearch<Bar>:echo<CR>
 " Bbye map
 :nnoremap <Leader>q :Bdelete<CR>
 
+" Cycle buffers with Tab
+:nnoremap <Tab> :bnext<CR>
+:nnoremap <S-Tab> :bprevious<CR>
+
 " Ctrl-p
 let g:ctrlp_extensions=['tag', 'buffertag']
 
