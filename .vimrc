@@ -33,6 +33,8 @@ Plugin 'rdnetto/YCM-Generator'
 Plugin 'tpope/vim-surround'
 Plugin 'vim-pandoc/vim-pandoc'
 Plugin 'vim-pandoc/vim-pandoc-syntax'
+Plugin 'junegunn/goyo.vim'
+Plugin 'junegunn/limelight.vim'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -48,6 +50,8 @@ filetype plugin indent on    " required
 "
 " see :h vundle for more details or wiki for FAQ
 " Put your non-Plugin stuff after this line
+
+let g:limelight_conceal_ctermfg = 'black'
 
 " When started as "evim", evim.vim will already have done these settings.
 if v:progname =~? "evim"
@@ -122,13 +126,13 @@ if has('syntax') && has('eval')
 endif
 
 " line numbering
-:set number relativenumber
+set number relativenumber
 
-:augroup numbertoggle
-:  autocmd!
-:  autocmd BufEnter,FocusGained,InsertLeave * set relativenumber
-:  autocmd BufLeave,FocusLost,InsertEnter   * set norelativenumber
-:augroup END
+augroup numbertoggle
+	autocmd!
+	autocmd BufEnter,FocusGained,InsertLeave * set relativenumber
+	autocmd BufLeave,FocusLost,InsertEnter   * set norelativenumber
+augroup END
 
 " YouCompleteMe
 let g:ycm_always_populate_location_list = 1
