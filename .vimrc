@@ -174,7 +174,7 @@ let g:NERDCommentEmptyLines = 1
 let g:NERDTrimTrailingWhitespace = 1
 
 " Tag Support
-set tags=./tags,tags;
+set tags=./md_tags;,./tags,tags;
 
 " Tagbar
 highlight link TagbarSignature Identifier
@@ -386,3 +386,7 @@ source ~/.regexlist.vim
 set exrc
 set secure
 
+let g:pandoc#syntax#codeblocks#embeds#langs = ["c", "cpp", "js=javascript", "python", "bash=sh", "shell=sh", "sh", "vim", "help"]
+
+let g:ycm_collect_identifiers_from_tags_files = 1
+let g:ycm_filetype_blacklist = {}
