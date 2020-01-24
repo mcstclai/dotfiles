@@ -29,3 +29,5 @@ fi
 export HEADER_USER_CONFIG_FILE=/home/vagrant/e197/git/header-dev/user_config.json
 export $(header-get-vars)
 export TERMINAL=.local/kitty.app/bin/kitty
+
+export PATH="$HOME/.cargo/bin:$PATH"
