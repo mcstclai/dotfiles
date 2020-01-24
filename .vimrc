@@ -246,6 +246,15 @@ let g:pandoc#syntax#codeblocks#embeds#langs = ["c", "cpp", "js=javascript", "pyt
 let g:ycm_collect_identifiers_from_tags_files = 1
 let g:ycm_filetype_blacklist = {}
 
+if !isdirectory($HOME."/.vim")
+	call mkdir($HOME."/.vim", "", 0770)
+endif
+if !isdirectory($HOME."/.vim/undo-dir")
+	call mkdir($HOME."/.vim/undo-dir", "", 0700)
+endif
+set undodir=~/.vim/undo-dir
+set undofile
+
 " pull in saved regexes
 source ~/.regexlist.vim
 
