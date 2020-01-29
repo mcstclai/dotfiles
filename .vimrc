@@ -37,6 +37,8 @@ Plugin 'junegunn/goyo.vim'
 Plugin 'junegunn/limelight.vim'
 Plugin 'cespare/vim-toml'
 Plugin 'rust-lang/rust.vim'
+Plugin 'DoxygenToolkit.vim'
+Plugin 'vhdirk/vim-cmake'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -260,3 +262,4 @@ source ~/.regexlist.vim
 
 " add cscope mappings
 source ~/.cscope_maps.vim
+let g:alternateNoDefaultAlternate = 1
