@@ -39,6 +39,7 @@ Plugin 'cespare/vim-toml'
 Plugin 'rust-lang/rust.vim'
 Plugin 'DoxygenToolkit.vim'
 Plugin 'vhdirk/vim-cmake'
+" Plugin 'dense-analysis/ale'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -263,3 +264,6 @@ source ~/.regexlist.vim
 " add cscope mappings
 source ~/.cscope_maps.vim
 let g:alternateNoDefaultAlternate = 1
+
+" don't indent namespaces
+set cino+=N-s

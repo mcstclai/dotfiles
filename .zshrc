@@ -129,6 +129,9 @@ alias v="vim"
 alias sk="screenkey"
 alias icat="kitty +kitten icat"
 
+# autocompletion for kitty
+kitty + complete setup zsh | source /dev/stdin
+
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ -f ~/.p10k.zsh ]] && source ~/.p10k.zsh
 
