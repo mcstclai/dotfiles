@@ -95,6 +95,7 @@ git
 git-flow
 svn
 vi-mode
+colored-man-pages
 )
 
 source $ZSH/oh-my-zsh.sh

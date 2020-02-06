@@ -94,6 +94,12 @@ endif
 
 " Only do this part when compiled with support for autocommands.
 if has("autocmd")
+	augroup numbertoggle
+		autocmd!
+		autocmd BufEnter,FocusGained,InsertLeave * set relativenumber
+		autocmd BufLeave,FocusLost,InsertEnter   * set norelativenumber
+	augroup END
+
 	" Put these in an autocmd group, so that we can delete them easily.
 	augroup vimrcEx
 		au!
@@ -106,8 +112,11 @@ if has("autocmd")
 		autocmd BufReadPost *
 					\ if line("'\"") > 1 && line("'\"") <= line("$") |
 					\   exe "normal! g`\"" |
-		" For all text files set 'textwidth' to 78 characters.
+	augroup END
 
+	augroup rusty_tags
+		autocmd BufRead *.rs :setlocal tags=./rusty-tags.vi;/,$RUST_SRC_PATH/rusty-tags.vi
+		autocmd BufWritePost *.rs :silent! exec "!rusty-tags vi --quiet --start-dir=" . expand('%:p:h') . "&" | redraw!
 	augroup END
 else
 	" always set autoindenting on
@@ -132,12 +141,6 @@ endif
 
 " line numbering
 set number relativenumber
-
-augroup numbertoggle
-	autocmd!
-	autocmd BufEnter,FocusGained,InsertLeave * set relativenumber
-	autocmd BufLeave,FocusLost,InsertEnter   * set norelativenumber
-augroup END
 
 " YouCompleteMe
 let g:ycm_always_populate_location_list = 1
@@ -180,9 +183,6 @@ let g:NERDTrimTrailingWhitespace = 1
 
 " Tag Support
 set tags=./md_tags;,./tags,tags;
-
-" Tagbar
-highlight link TagbarSignature Identifier
 
 " NERDTree
 let NERDTreeIgnore=['cscope', 'CTAGS', '^tags$', '\.o$', '\.vim$', '\~$']

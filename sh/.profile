@@ -31,3 +31,4 @@ export $(header-get-vars)
 export TERMINAL=.local/kitty.app/bin/kitty
 
 export PATH="$HOME/.cargo/bin:$PATH"
+export RUST_SRC_PATH=$(rustc --print sysroot)/lib/rustlib/src/rust/src/
