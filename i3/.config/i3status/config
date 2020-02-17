@@ -45,6 +45,6 @@ load {
 disk "/" {
 	format = "%percentage_used %used/%total"
 	low_threshold = "10"
-	threshold_type = "percentage_free"
+	threshold_type = "percentage_avail"
 }
 

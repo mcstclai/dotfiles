@@ -9,6 +9,8 @@ call vundle#begin()
 
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
+Plugin 'vim-pandoc/vim-pandoc'
+Plugin 'vim-pandoc/vim-pandoc-syntax'
 Plugin 'tpope/vim-fugitive'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'scrooloose/nerdtree'
@@ -31,8 +33,6 @@ Plugin 'moll/vim-bbye'
 Plugin 'rdnetto/YCM-Generator'
 " Plugin 'jeaye/color_coded'
 Plugin 'tpope/vim-surround'
-Plugin 'vim-pandoc/vim-pandoc'
-Plugin 'vim-pandoc/vim-pandoc-syntax'
 Plugin 'junegunn/goyo.vim'
 Plugin 'junegunn/limelight.vim'
 Plugin 'cespare/vim-toml'
@@ -40,6 +40,7 @@ Plugin 'rust-lang/rust.vim'
 Plugin 'DoxygenToolkit.vim'
 Plugin 'vhdirk/vim-cmake'
 " Plugin 'dense-analysis/ale'
+Plugin 'octol/vim-cpp-enhanced-highlight'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -185,7 +186,7 @@ let g:NERDTrimTrailingWhitespace = 1
 set tags=./md_tags;,./tags,tags;
 
 " NERDTree
-let NERDTreeIgnore=['cscope', 'CTAGS', '^tags$', '\.o$', '\.vim$', '\~$']
+let g:NERDTreeIgnore=['cscope', 'CTAGS', '^tags$', '\.o$', '\.vim$', '\~$']
 
 " Function Key Mappings
 map <F2> :mksession! ./Session.vim <cr>
@@ -228,6 +229,7 @@ let g:UltiSnipsEditSplit="vertical"
 
 "Pandoc settings
 let g:pandoc#folding#level=1
+let g:c_curly_error=1
 
 "Pandoc related keymaps
 nnoremap <leader>gq :%!pandoc -f html -t markdown<CR>
@@ -245,6 +247,7 @@ set exrc
 set secure
 
 let g:pandoc#syntax#codeblocks#embeds#langs = ["c", "cpp", "js=javascript", "python", "bash=sh", "shell=sh", "sh", "vim", "help"]
+let g:markdown_fenced_languages = ["c", "cpp", "js=javascript", "python", "bash=sh", "shell=sh", "sh", "vim", "help"]
 
 let g:ycm_collect_identifiers_from_tags_files = 1
 let g:ycm_filetype_blacklist = {}
@@ -267,3 +270,4 @@ let g:alternateNoDefaultAlternate = 1
 
 " don't indent namespaces
 set cino+=N-s
+
