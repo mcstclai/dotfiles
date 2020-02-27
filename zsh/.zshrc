@@ -130,6 +130,7 @@ alias v="vim"
 alias sk="screenkey"
 alias icat="kitty +kitten icat"
 alias gs=
+alias r="ranger"
 
 # autocompletion for kitty
 kitty + complete setup zsh | source /dev/stdin
