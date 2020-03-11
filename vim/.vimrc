@@ -41,6 +41,7 @@ Plugin 'DoxygenToolkit.vim'
 Plugin 'vhdirk/vim-cmake'
 " Plugin 'dense-analysis/ale'
 Plugin 'octol/vim-cpp-enhanced-highlight'
+Plugin 'airblade/vim-gitgutter'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -271,3 +272,5 @@ let g:alternateNoDefaultAlternate = 1
 " don't indent namespaces
 set cino+=N-s
 
+" update faster (for gitgutter, especially)
+set updatetime=100
