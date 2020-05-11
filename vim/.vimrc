@@ -42,7 +42,7 @@ Plugin 'vhdirk/vim-cmake'
 " Plugin 'dense-analysis/ale'
 Plugin 'octol/vim-cpp-enhanced-highlight'
 Plugin 'airblade/vim-gitgutter'
-Plugin 'gauteh/vim-cppman'
+" Plugin 'gauteh/vim-cppman' " screws up c++ iskeyword
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
