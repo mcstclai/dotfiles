@@ -95,8 +95,8 @@ set $ws5 QNX
 set $ws6 XSDK
 set $ws7 Stby
 set $ws8 MPSoC
-set $ws9
-set $ws10
+set $ws9 Servers
+set $ws10 Code
 
 # switch to workspace
 bindsym $mod+1 workspace 1 $ws1
