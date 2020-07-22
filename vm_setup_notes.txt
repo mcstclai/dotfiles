@@ -1,0 +1,4 @@
+After license installation, prior to MCUx and zsh...
+
+1) Fix mouse back button (in .vmx file). 
+2) Install i3.
